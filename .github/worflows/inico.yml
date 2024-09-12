@@ -1,0 +1,14 @@
+name: Codespace Opened Action
+on:
+  repository_dispatch:
+    types: [codespace_opened]
+
+jobs:
+  run-on-codespace-open:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Run custom script
+        run: echo "Codespace abierto y acción lanzada."
